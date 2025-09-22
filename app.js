@@ -14,7 +14,8 @@ function agregarAmigo(){
     } else {
     amigos.push(nombresAñadidos);
     limpiarCampo();
-    asignarElementoTexto ("listaAmigos", `${amigos}`);
+    mostrarLista();
+   // asignarElementoTexto ("listaAmigos", `${amigos}`);
     }
 }
 
@@ -23,3 +24,13 @@ function limpiarCampo(){
     valorCaja.value="";
 }
 
+
+function mostrarLista() {
+    let lista = document.getElementById("listaAmigos");
+    // limpiar la lista antes de mostrar
+    lista.innerHTML = ""; 
+
+    for (let posición = 0; posición < amigos.length; posición++) {
+        lista.innerHTML =lista.innerHTML + `<li>${amigos[posición]}</li>`;
+    }
+}
